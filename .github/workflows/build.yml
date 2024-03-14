@@ -1,12 +1,10 @@
 # Workflow name
 name: Build
 on:
-# When it will be triggered
-# And in which branch
-  pull_request:
   push:
-    branches:
-      - main, develop
+    branches: [ ]
+  pull_request:
+    branches: [ ]
 # Where will they run
 jobs:
   build:

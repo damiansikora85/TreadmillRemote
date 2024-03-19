@@ -23,17 +23,17 @@ jobs:
         run: chmod +x gradlew
 
       - name: Create Keystore file
-          uses: timheuer/base64-to-file@v1
-          with:
-            fileName: "keystore.jks"
-            encodedString: ${{ secrets.KEYSTORE }}
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: "keystore.jks"
+          encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Build with Gradle
         run: ./gradlew build
 
       - name: 'Upload Artifact'
-          uses: actions/upload-artifact@v4
-          with:
-            name: Bundle
-            path: app/release/app-release.aab
-            retention-days: 5
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bundle
+          path: app/release/app-release.aab
+          retention-days: 5

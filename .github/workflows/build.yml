@@ -29,7 +29,10 @@ jobs:
           encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew assembleRelease 
+
+      - name: Create bundle
+        run: ./gradlew bundleRelease  
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4

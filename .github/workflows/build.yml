@@ -37,7 +37,7 @@ jobs:
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
 
       - name: Create bundle
-        run: ./gradlew bundleRelease --debug
+        run: ./gradlew bundleRelease --stacktrace
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
